@@ -1,5 +1,7 @@
 NAME = libftprintf.a
 SOURCES = ft_printf.c
+LIBFT_PATH = ./libft
+LIBFT = $(LIBFT_PATH)/libft.a
 
 OBJECTS = $(SOURCES:.c=.o)
 
