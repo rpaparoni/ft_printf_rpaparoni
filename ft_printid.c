@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 17:40:29 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/05 14:29:56 by rpaparon         ###   ########.fr       */
+/*   Created: 2024/11/05 12:42:37 by rpaparon          #+#    #+#             */
+/*   Updated: 2024/11/05 14:29:59 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
+size_t	ft_intlen(int value)
+{
+	size_t	len;
 
-int    *ft_printf(char const *format, ...);
-int    ft_putchar(char c);
-void	ft_putstr(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+	len = 0;
+	if (value <= 0)
+	{
+		len++;
+	}
+	while (value)
+	{
+		len++;
+		value /= 10;
+	}
+	return (len);
+}
 
-
-#endif
+void	ft_printid(int value, int *counter)
+{
+	ft_putnbr_fd(value, 1);
+	(*counter) += ft_intlen(value);
+}

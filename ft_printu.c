@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_printu.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/28 17:40:29 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/05 14:29:56 by rpaparon         ###   ########.fr       */
+/*   Created: 2024/11/05 14:55:05 by rpaparon          #+#    #+#             */
+/*   Updated: 2024/11/05 15:08:44 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-
-# include <stdarg.h>
-
-int    *ft_printf(char const *format, ...);
-int    ft_putchar(char c);
-void	ft_putstr(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-
-
-#endif
+void	ft_printu(unsigned int value, int *counter)
+{
+	if (value >= 10)
+	{
+		ft_printu(value / 10, counter);
+		ft_printu(value % 10, counter);
+	}
+	else
+		ft_putchar_fd(value + '0', 1);
+	*counter++;
+}

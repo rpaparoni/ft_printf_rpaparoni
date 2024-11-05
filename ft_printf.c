@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:43:49 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/10/28 19:54:30 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/05 14:49:31 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,19 @@ int	*ft_type(const char c, va_list value, int *counter)
 	else if (c  == 's')
 		ft_putstr(va_arg(value, int), counter);
 	else if (c == 'p')
-		ft_printp();
+		ft_printp(va_arg(value, unsigned long long), counter);
+	else if (c == 'i' || c == 'd')
+		ft_printid(va_arg(value, int), counter);
+	else if (c == 'u')
+		ft_printu(va_arg(value, unsigned int), counter);
+	else if (c == 'x' || c == 'X')
+		ft_printx(va_arg(value, unsigned int), c, counter);
+	else if (c == '%')
+	{
+		*counter++;
+		ft_putchar('%');
+	}
+	
 }
 
 int	*ft_printf(char const *str, ...)
