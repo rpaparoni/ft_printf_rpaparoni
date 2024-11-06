@@ -6,11 +6,11 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 14:15:29 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/05 14:22:53 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:25:58 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

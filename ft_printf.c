@@ -6,21 +6,43 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:43:49 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/05 14:49:31 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:08:56 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	*ft_type(const char c, va_list value, int *counter)
+int		ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+int		ft_putstr(char *value, int *counter)
+{
+	int	i;
+
+	i = 0;
+	if (!value)
+		value = "(null)";
+	while (value[i] != '\0')
+	{
+		ft_putchar(value[i]);
+		(*counter)++;
+		i++;
+	}
+	return(1);
+}
+
+void	ft_type(const char c, va_list value, int *counter)
 {
 	if (c == 'c')
 	{
-		*counter++;
+		(*counter)++;
 		ft_putchar(va_arg(value, int));
 	}
 	else if (c  == 's')
-		ft_putstr(va_arg(value, int), counter);
+		ft_putstr(va_arg(value, char *), counter);
 	else if (c == 'p')
 		ft_printp(va_arg(value, unsigned long long), counter);
 	else if (c == 'i' || c == 'd')
@@ -28,16 +50,16 @@ int	*ft_type(const char c, va_list value, int *counter)
 	else if (c == 'u')
 		ft_printu(va_arg(value, unsigned int), counter);
 	else if (c == 'x' || c == 'X')
-		ft_printx(va_arg(value, unsigned int), c, counter);
+		ft_printhex(va_arg(value, unsigned int), c, counter);
 	else if (c == '%')
 	{
-		*counter++;
+		(*counter)++;
 		ft_putchar('%');
 	}
 	
 }
 
-int	*ft_printf(char const *str, ...)
+int		ft_printf(const char *str, ...)
 {
 	int		counter;
 	va_list	args;
@@ -52,6 +74,6 @@ int	*ft_printf(char const *str, ...)
 			ft_type(*str++, args, &counter);
 		str++;
 	}
-	ve_end(args);
-	return(counter);
+	va_end(args);
+	return (counter);
 }

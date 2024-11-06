@@ -6,18 +6,16 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:55:05 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/06 16:01:40 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/06 17:24:44 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 void	ft_printu(unsigned int value, int *counter)
 {
 	if (value >= 10)
-	{
 		ft_printu(value / 10, counter);
-		ft_printu(value % 10, counter);
-	}
-	else
-		ft_putchar_fd(value + '0', 1);
-	*counter++;
+	ft_putchar_fd(value % 10 + '0', 1);
+	(*counter)++;
 }
