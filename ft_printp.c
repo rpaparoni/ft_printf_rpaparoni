@@ -6,22 +6,22 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:06:03 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/05 14:42:57 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:58:33 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_ptrlen(uintptr_t num)
+size_t	ft_ptrlen(uintptr_t value)
 {
 	size_t	len;
 
 	len = 0;
-	if (num == 0)
-		return (1);
-	while (num)
+	if (value <= 0)
+		len++;
+	while (value)
 	{
-		num /= 16;
+		value /= 16;
 		len++;
 	}
 	return (len);
@@ -36,7 +36,7 @@ void	ft_putptr(uintptr_t num)
 	}	
 	else
 	{
-		if (num >= 9)
+		if (num <= 9)
 			ft_putchar_fd((num + '0'), 1);
 		else
 			ft_putchar_fd((num - 10 + 'a'), 1);

@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:42:37 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/05 14:29:59 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/06 15:51:24 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ size_t	ft_intlen(int value)
 
 	len = 0;
 	if (value <= 0)
-	{
 		len++;
-	}
 	while (value)
 	{
 		len++;
