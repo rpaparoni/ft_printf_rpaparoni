@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:43:49 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/06 17:08:56 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/07 15:09:33 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void	ft_type(const char c, va_list value, int *counter)
 		ft_printu(va_arg(value, unsigned int), counter);
 	else if (c == 'x' || c == 'X')
 		ft_printhex(va_arg(value, unsigned int), c, counter);
-	else if (c == '%')
+	else if (c != 0)
 	{
 		(*counter)++;
-		ft_putchar('%');
+		ft_putchar(c);
 	}
 	
 }
@@ -71,9 +71,15 @@ int		ft_printf(const char *str, ...)
 		if (*str != '%')
 			counter += ft_putchar(str[0]);
 		else
-			ft_type(*str++, args, &counter);
+			ft_type(*++str, args, &counter);
 		str++;
 	}
 	va_end(args);
 	return (counter);
+}
+
+int main() {
+    char *message = "hola pato";
+    ft_printf("Characters printed: %s\n", message);
+    return 0;
 }
