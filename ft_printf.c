@@ -6,19 +6,19 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:43:49 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/07 15:09:33 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:49:20 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
 	return (1);
 }
 
-int		ft_putstr(char *value, int *counter)
+int	ft_putstr(char *value, int *counter)
 {
 	int	i;
 
@@ -31,7 +31,7 @@ int		ft_putstr(char *value, int *counter)
 		(*counter)++;
 		i++;
 	}
-	return(1);
+	return (1);
 }
 
 void	ft_type(const char c, va_list value, int *counter)
@@ -41,7 +41,7 @@ void	ft_type(const char c, va_list value, int *counter)
 		(*counter)++;
 		ft_putchar(va_arg(value, int));
 	}
-	else if (c  == 's')
+	else if (c == 's')
 		ft_putstr(va_arg(value, char *), counter);
 	else if (c == 'p')
 		ft_printp(va_arg(value, unsigned long long), counter);
@@ -56,10 +56,9 @@ void	ft_type(const char c, va_list value, int *counter)
 		(*counter)++;
 		ft_putchar(c);
 	}
-	
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		counter;
 	va_list	args;
@@ -78,8 +77,9 @@ int		ft_printf(const char *str, ...)
 	return (counter);
 }
 
+/*
 int main() {
     char *message = "hola pato";
     ft_printf("Characters printed: %s\n", message);
     return 0;
-}
+}*/

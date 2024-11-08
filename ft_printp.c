@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:06:03 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/06 17:14:10 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/08 14:52:57 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putptr(uintptr_t num)
 	{
 		ft_putptr(num / 16);
 		ft_putptr(num % 16);
-	}	
+	}
 	else
 	{
 		if (num <= 9)
