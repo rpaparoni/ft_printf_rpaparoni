@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 20:06:03 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/08 14:52:57 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:39:56 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,12 @@ void	ft_putptr(uintptr_t num)
 
 void	ft_printp(unsigned long long value, int *counter)
 {
+	void	*ptr;
+
+	ptr = &value;
 	(*counter) += write(1, "0x", 2);
-	if (value == 0)
-		(*counter) += (write(1, "0", 1));
+	if (ptr == 0)
+		(*counter) += (write(1, "(nil)", 6));
 	else
 	{
 		ft_putptr(value);
