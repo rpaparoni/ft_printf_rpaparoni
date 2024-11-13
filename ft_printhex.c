@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:51:36 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/13 13:02:25 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/13 13:08:08 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,7 @@ void	ft_puthex(unsigned int num, const char c)
 void	ft_printhex(unsigned int value, const char c, int *counter)
 {
 	if (value == 0)
-	{
-		ft_printf("%s", "(nill)");
-		(*counter) += 6;
-	}
+		(*counter) += (write(1, "(nill)", 6));
 	else
 	{
 		ft_puthex(value, c);
