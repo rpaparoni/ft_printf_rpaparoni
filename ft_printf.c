@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:43:49 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/13 13:28:14 by rpaparon         ###   ########.fr       */
+/*   Updated: 2024/11/26 18:55:23 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void	ft_type(const char c, va_list value, int *counter)
 		(*counter)++;
 		ft_putchar(c);
 	}
-
 }
 
 int	ft_printf(const char *str, ...)
