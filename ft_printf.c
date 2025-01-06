@@ -6,7 +6,7 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 17:43:49 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/26 18:55:23 by rpaparon         ###   ########.fr       */
+/*   Updated: 2025/01/06 14:40:43 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_putstr(char *value, int *counter)
 	return (1);
 }
 
-void	ft_type(const char c, va_list value, int *counter)
+static void	ft_type(const char c, va_list value, int *counter)
 {
 	if (c == 'c')
 	{
