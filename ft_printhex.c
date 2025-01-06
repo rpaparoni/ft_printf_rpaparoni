@@ -6,13 +6,13 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 14:51:36 by rpaparon          #+#    #+#             */
-/*   Updated: 2025/01/06 13:34:26 by rpaparon         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:52:20 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_hexlen(unsigned int value)
+static size_t	ft_hexlen(unsigned int value)
 {
 	size_t	len;
 
@@ -27,7 +27,7 @@ size_t	ft_hexlen(unsigned int value)
 	return (len);
 }
 
-void	ft_puthex(unsigned int num, const char c)
+static void	ft_puthex(unsigned int num, const char c)
 {
 	if (num >= 16)
 	{

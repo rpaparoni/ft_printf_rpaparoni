@@ -6,13 +6,13 @@
 /*   By: rpaparon <rpaparon@student.42madrid.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:42:37 by rpaparon          #+#    #+#             */
-/*   Updated: 2024/11/08 14:50:22 by rpaparon         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:52:41 by rpaparon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	ft_intlen(int value)
+static size_t	ft_intlen(int value)
 {
 	size_t	len;
 
