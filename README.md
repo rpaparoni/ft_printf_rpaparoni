@@ -22,7 +22,7 @@
 ## 🚀 **Instalación y Uso**
 ### 1️⃣ **Clonar el repositorio**  
 ```bash
-git clone https://github.com/rpaparoni/ft_printf.git
+git clone https://github.com/rpaparoni/ft_printf_rpaparoni.git
 cd ft_printf
 ```
 ### 2️⃣ **Compilar la librería**  
