@@ -1,4 +1,4 @@
-# ft_printf - A Custom Implementation of printf
+# ft_printf - A Custom Implementation of printf  [Spanish version ->](README_es.md)
 
 `ft_printf` is a recreation of the standard `printf` function in C, developed from scratch without using `printf`, `sprintf`, or any similar functions. This implementation is part of advanced C learning and follows the **Norminette** to ensure clean and structured code.
 
@@ -51,5 +51,5 @@ gcc main.c -L. -lftprintf -o program
 ## 📜 **License**  
 This project is open-source and can be freely used and modified.  
   
-🐙 **GitHub:** [rpaparoni](https://github.com/rpaparoni)  
+🐙 **GitHub:** [rpaparoni](https://github.com/rpaparoni) 
 
